@@ -1,0 +1,35 @@
+
+
+//1 2 3 4 5 == o/p:3+4+5=12                              
+      
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int a[5]={1,2,3,4,5};
+    
+    int i=0,mx=INT_MIN,j=0,sum=0;
+    
+    int n=5,k=3;
+    
+    while(j<n){
+        sum+=a[j];
+        
+        if(j-i+1<k){
+            j++;
+        }else if(j-i+1==k){
+            mx=max(sum,mx);
+            sum=sum-a[i];
+            i++;
+            
+            j++;
+        }
+    }
+    cout<<mx<<endl;
+    
+    
+
+    return 0;
+}
